@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<style>
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:#191510; color:#f0e6d6; }
+  ::-webkit-scrollbar{ width:10px; height:10px; }
+  ::-webkit-scrollbar-thumb{ background:#3c3127; border-radius:6px; }
+  @keyframes flameglow{ 0%,100%{ opacity:.6; transform:scale(1); } 50%{ opacity:.95; transform:scale(1.05); } }
+  @keyframes embershift{ 0%{ background-position:0% 50%; } 100%{ background-position:200% 50%; } }
+  @keyframes floaty{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-10px); } }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  a{ text-decoration:none; color:inherit; }
+</style>
+</helmet>
+
+<div style="font-family:'Barlow',system-ui,sans-serif; background:#191510; overflow-x:hidden;">
+
+  <!-- ================= HEADER ================= -->
+  <header style="position:sticky; top:0; z-index:50; backdrop-filter:blur(14px); background:rgba(10,9,11,.78); border-bottom:1px solid rgba(255,255,255,.06);">
+    <div style="position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,#e05c14,#f3a657,#e05c14); background-size:200% 100%; animation:embershift 6s linear infinite;"></div>
+    <div style="max-width:1180px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <a href="#top" style="display:flex; align-items:center; gap:12px;">
+        <span style="width:46px; height:46px; border-radius:13px; overflow:hidden; box-shadow:0 0 0 1.5px rgba(255,122,26,.5), 0 0 18px rgba(255,90,8,.35); display:block;"><img src="assets/big-burger-logo.jpg" alt="Big Burger" style="width:100%;height:100%;object-fit:cover;display:block;"></span>
+        <span style="display:flex; flex-direction:column; line-height:1;">
+          <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:20px; letter-spacing:.05em; text-transform:uppercase; color:#f2e8d8;">Big Burger</span>
+          <span style="font-family:'Barlow',sans-serif; font-weight:500; font-size:11px; letter-spacing:.08em; color:#f0913c; margin-top:3px;">Грозный · доставка еды</span>
+        </span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:26px;">
+        <a href="#menu" style="font-weight:600; font-size:14px; letter-spacing:.04em; color:#cabda8; display:none;" class="navlink">Меню</a>
+        <a href="https://wa.me/79388976161" target="_blank" style="display:inline-flex; align-items:center; gap:9px; padding:11px 20px; border-radius:999px; background:linear-gradient(180deg,#33b466,#299150); box-shadow:0 8px 22px -8px rgba(43,208,106,.6); font-weight:700; font-size:14px; color:#06140b; letter-spacing:.01em;">
+          <i class="ph-fill ph-whatsapp-logo" style="font-size:18px;"></i> Заказать
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section id="top" style="position:relative; overflow:hidden; background:radial-gradient(1100px 620px at 50% -8%, #2e2015 0%, #1d1813 46%, #191510 100%);">
+    <div style="position:absolute; inset:0; background:radial-gradient(70% 60% at 50% 116%, rgba(224,92,20,.4) 0%, rgba(255,70,0,.14) 32%, transparent 60%); animation:flameglow 5s ease-in-out infinite;"></div>
+    <div style="max-width:1180px; margin:0 auto; padding:64px 20px 72px; position:relative; display:flex; align-items:center; gap:48px; flex-wrap:wrap; justify-content:center;">
+      <!-- copy -->
+      <div style="flex:1 1 420px; min-width:300px; max-width:600px;">
+        <div style="display:inline-flex; align-items:center; gap:9px; padding:7px 15px; border-radius:999px; background:rgba(255,122,26,.12); box-shadow:0 0 0 1px rgba(255,122,26,.3) inset; font-weight:600; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:#f3a657;">
+          <i class="ph-fill ph-fire"></i> Готовим с огоньком
+        </div>
+        <h1 style="font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(38px,7vw,76px); line-height:.96; letter-spacing:.005em; text-transform:uppercase; color:#f5ecdd; margin:22px 0 0;">Накормим<br><span style="color:#ef8326;">вкусно</span> и быстро</h1>
+        <p style="font-size:clamp(16px,2vw,19px); line-height:1.5; color:#bdb19d; max-width:480px; margin:20px 0 0;">Бургеры, шаурма, суши, мангал и пицца с доставкой по Грозному. Готовим из свежих продуктов каждый день до 23:55.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:30px;">
+          <a href="https://wa.me/79388976161" target="_blank" style="display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:14px; background:linear-gradient(180deg,#f0913c,#e76a14); box-shadow:0 16px 34px -12px rgba(255,90,8,.7); font-weight:700; font-size:16px; color:#1a0d04;">
+            <i class="ph-fill ph-whatsapp-logo" style="font-size:20px;"></i> Заказать в WhatsApp
+          </a>
+          <a href="#menu" style="display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:14px; background:rgba(255,255,255,.05); box-shadow:0 0 0 1px rgba(255,255,255,.12) inset; font-weight:600; font-size:16px; color:#e8ddcc;">
+            Смотреть меню <i class="ph ph-arrow-down" style="font-size:18px;"></i>
+          </a>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:22px; margin-top:32px;">
+          <div style="display:flex; align-items:center; gap:10px;"><i class="ph-fill ph-moped" style="color:#f0913c; font-size:22px;"></i><span style="font-weight:600; font-size:14.5px; color:#d6cab6;">Бесплатно от 1000 ₽ · до 10 км</span></div>
+          <div style="display:flex; align-items:center; gap:10px;"><i class="ph-fill ph-clock" style="color:#f0913c; font-size:22px;"></i><span style="font-weight:600; font-size:14.5px; color:#d6cab6;">Ежедневно 10:00–23:55</span></div>
+        </div>
+      </div>
+      <!-- emblem -->
+      <div style="flex:0 0 auto; width:min(380px,80vw); aspect-ratio:1; position:relative; animation:floaty 6s ease-in-out infinite;">
+        <div style="position:absolute; inset:-8%; border-radius:50%; background:radial-gradient(closest-side, rgba(255,90,8,.45), transparent 72%); filter:blur(8px);"></div>
+        <div style="position:relative; width:100%; height:100%; border-radius:30px; overflow:hidden; box-shadow:0 0 0 2px rgba(255,122,26,.5), 0 30px 70px -20px rgba(0,0,0,.8), 0 0 60px rgba(255,90,8,.35);">
+          <img src="assets/big-burger-logo.jpg" alt="Big Burger" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OFFER ================= -->
+  <section style="max-width:1180px; margin:8px auto 0; padding:30px 20px 6px;">
+    <div style="text-align:center; margin-bottom:22px;">
+      <div style="display:inline-flex; align-items:center; gap:9px; padding:7px 16px; border-radius:999px; background:rgba(224,92,20,.14); box-shadow:0 0 0 1px rgba(224,92,20,.4) inset; font-weight:700; font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:#f3a657;">
+        <i class="ph-fill ph-fire"></i> Акция недели
+      </div>
+    </div>
+
+    <!-- combo -->
+    <div style="position:relative; overflow:hidden; border-radius:24px; background:linear-gradient(145deg,#2e2015,#221b15 55%,#191510); box-shadow:0 0 0 1px rgba(224,92,20,.35) inset, 0 30px 60px -28px rgba(0,0,0,.7);">
+      <div style="position:absolute; right:-6%; top:-40%; width:50%; height:170%; background:radial-gradient(closest-side, rgba(224,92,20,.4), transparent 70%);"></div>
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#e05c14,#f3a657,#e05c14); background-size:200% 100%; animation:embershift 6s linear infinite;"></div>
+      <div style="position:relative; display:flex; flex-wrap:wrap; gap:30px; padding:34px; align-items:center;">
+        <div style="flex:1 1 340px; min-width:280px;">
+          <div style="font-weight:600; font-size:12.5px; letter-spacing:.2em; text-transform:uppercase; color:#f0913c;">Комбо на двоих</div>
+          <h2 style="font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(32px,4.8vw,50px); line-height:1; text-transform:uppercase; color:#f5ecdd; margin:8px 0 0;">«Большой <span style="color:#ef8326;">голод</span>»</h2>
+          <div style="display:flex; flex-direction:column; gap:9px; margin:20px 0 0;">
+            <sc-for list="{{ comboItems }}" as="ci" hint-placeholder-count="3">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <i class="ph-fill ph-check-circle" style="color:#33b466; font-size:19px;"></i>
+                <span style="font-size:15.5px; color:#e8ddcc;">{{ ci }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex; align-items:baseline; flex-wrap:wrap; gap:14px; margin-top:22px;">
+            <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(40px,6vw,60px); color:#f5ecdd; line-height:1;">990 ₽</span>
+            <span style="font-size:22px; color:#8d8270; text-decoration:line-through;">1260 ₽</span>
+            <span style="padding:6px 12px; border-radius:999px; background:rgba(51,180,102,.16); box-shadow:0 0 0 1px rgba(51,180,102,.4) inset; font-weight:700; font-size:13px; color:#a3ddba;">выгода 270 ₽</span>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-top:24px;">
+            <a href="https://wa.me/79388976161?text=Хочу%20комбо%20Большой%20голод%20за%20990" target="_blank" style="display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:14px; background:linear-gradient(180deg,#f0913c,#e76a14); box-shadow:0 16px 34px -12px rgba(255,90,8,.7); font-weight:700; font-size:16px; color:#1a0d04;">
+              <i class="ph-fill ph-whatsapp-logo" style="font-size:20px;"></i> Забрать за 990 ₽
+            </a>
+            <div style="display:flex; flex-direction:column; gap:3px;">
+              <span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#a89c88;">До конца акции</span>
+              <span style="font-family:'Barlow Condensed','Barlow',monospace; font-weight:700; font-size:26px; letter-spacing:.04em; color:#f3a657;">{{ timer }}</span>
+            </div>
+          </div>
+        </div>
+        <div style="flex:0 0 auto; width:min(320px,82vw); aspect-ratio:4/3; border-radius:18px; position:relative; overflow:hidden; background:repeating-linear-gradient(135deg,#2f261c,#2f261c 12px,#2a2219 12px,#2a2219 24px); display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 1px rgba(255,255,255,.06) inset;">
+          <div style="position:absolute; inset:0; background:radial-gradient(75% 80% at 50% 120%, rgba(224,92,20,.32), transparent 62%);"></div>
+          <div style="text-align:center; position:relative;">
+            <i class="ph-fill ph-hamburger" style="font-size:66px; color:rgba(240,145,60,.9);"></i>
+            <div style="font-family:'Barlow',monospace; font-size:11px; letter-spacing:.12em; color:#8d8270; margin-top:12px;">СЮДА ФОТО КОМБО</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 promos -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:16px;">
+      <sc-for list="{{ promos }}" as="p" hint-placeholder-count="3">
+        <div style="position:relative; background:linear-gradient(160deg,#272019,#1f1a14); border-radius:18px; padding:22px; box-shadow:0 0 0 1px rgba(255,255,255,.05) inset; overflow:hidden;">
+          <div style="position:absolute; right:-20%; top:-40%; width:60%; height:120%; background:radial-gradient(closest-side, rgba(224,92,20,.16), transparent 70%);"></div>
+          <div style="position:relative;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+              <span style="display:inline-flex; width:44px; height:44px; border-radius:12px; align-items:center; justify-content:center; background:rgba(224,92,20,.14); box-shadow:0 0 0 1px rgba(224,92,20,.32) inset;"><i class="{{ p.icon }}" style="color:#f0913c; font-size:23px;"></i></span>
+              <span style="padding:5px 11px; border-radius:999px; background:rgba(240,145,60,.14); font-weight:700; font-size:11.5px; letter-spacing:.06em; color:#f3a657;">{{ p.tag }}</span>
+            </div>
+            <div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:19px; color:#efe5d5; margin-top:16px;">{{ p.title }}</div>
+            <div style="font-size:13.5px; line-height:1.5; color:#a89c88; margin-top:7px;">{{ p.text }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ================= AI OFFERS ================= -->
+  <section style="max-width:1180px; margin:34px auto 0; padding:0 20px;">
+    <div style="position:relative; overflow:hidden; border-radius:24px; background:linear-gradient(150deg,#221b15,#191510); box-shadow:0 0 0 1px rgba(255,255,255,.06) inset; padding:32px;">
+      <div style="position:absolute; left:-8%; top:-50%; width:42%; height:180%; background:radial-gradient(closest-side, rgba(224,92,20,.14), transparent 70%);"></div>
+      <div style="position:relative;">
+        <div style="display:inline-flex; align-items:center; gap:9px; padding:6px 14px; border-radius:999px; background:rgba(240,145,60,.12); box-shadow:0 0 0 1px rgba(240,145,60,.3) inset; font-weight:700; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:#f3a657;">
+          <i class="ph-fill ph-sparkle"></i> Умные акции
+        </div>
+        <h2 style="font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(26px,4vw,42px); line-height:1.04; text-transform:uppercase; color:#f2e8d8; margin:14px 0 0;">Мало? Придумаем акцию <span style="color:#ef8326;">под вашу цель</span></h2>
+        <p style="font-size:16px; line-height:1.55; color:#bdb19d; max-width:560px; margin:12px 0 0;">Выберите цель, и получите 3 готовых промо за пару секунд. Можно тестировать новые идеи хоть каждый день, не нанимая маркетолога.</p>
+
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:24px;">
+          <sc-for list="{{ goals }}" as="g" hint-placeholder-count="3">
+            <button onClick="{{ g.onClick }}" style="{{ g.style }}">{{ g.label }}</button>
+          </sc-for>
+          <sc-if value="{{ genBusy }}" hint-placeholder-val="{{ false }}">
+            <span style="display:inline-flex; align-items:center; gap:8px; font-size:13.5px; color:#f3a657; font-weight:600;"><i class="ph-fill ph-spinner-gap" style="font-size:17px; display:inline-block; animation:spin .8s linear infinite;"></i> AI подбирает акции…</span>
+          </sc-if>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-top:24px;">
+          <sc-for list="{{ aiOffers }}" as="o" hint-placeholder-count="3">
+            <div style="position:relative; background:linear-gradient(165deg,#272019,#1f1a14); border-radius:16px; padding:20px; box-shadow:0 0 0 1px rgba(255,255,255,.05) inset; display:flex; flex-direction:column; gap:9px;">
+              <div style="display:flex; align-items:center; gap:9px;">
+                <i class="ph-fill ph-fire" style="color:#ef8326; font-size:18px;"></i>
+                <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:18px; color:#f2e8d8; line-height:1.1;">{{ o.title }}</span>
+              </div>
+              <div style="font-size:14.5px; line-height:1.45; color:#e8ddcc;">{{ o.mechanic }}</div>
+              <div style="display:flex; align-items:flex-start; gap:7px; margin-top:2px;">
+                <i class="ph-bold ph-trend-up" style="color:#33b466; font-size:15px; margin-top:2px;"></i>
+                <span style="font-size:12.5px; line-height:1.4; color:#a89c88;">{{ o.why }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:8px; margin-top:18px; font-size:12.5px; color:#857a68;">
+          <i class="ph ph-info" style="font-size:15px;"></i> Идеи генерирует ИИ под ваш бизнес. Выбирайте, что запустить, и зарабатывайте больше.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section style="max-width:1180px; margin:0 auto; padding:14px 20px 8px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px;">
+      <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+        <div style="background:linear-gradient(160deg,#272019,#1f1a14); border-radius:16px; padding:22px; box-shadow:0 0 0 1px rgba(255,255,255,.05) inset;">
+          <span style="display:inline-flex; width:46px; height:46px; border-radius:13px; align-items:center; justify-content:center; background:rgba(255,122,26,.12); box-shadow:0 0 0 1px rgba(255,122,26,.28) inset;"><i class="{{ f.icon }}" style="color:#f0913c; font-size:24px;"></i></span>
+          <div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:18px; letter-spacing:.02em; color:#efe5d5; margin-top:14px;">{{ f.title }}</div>
+          <div style="font-size:13.5px; line-height:1.45; color:#a89c88; margin-top:6px;">{{ f.text }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ================= MENU ================= -->
+  <section id="menu" style="max-width:1180px; margin:0 auto; padding:54px 20px 20px;">
+    <div style="text-align:center; margin-bottom:28px;">
+      <div style="font-weight:600; font-size:12.5px; letter-spacing:.26em; text-transform:uppercase; color:#f0913c;">Наше меню</div>
+      <h2 style="font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(30px,5vw,48px); letter-spacing:.02em; text-transform:uppercase; color:#f2e8d8; margin:8px 0 0;">Выбирай и заказывай</h2>
+    </div>
+
+    <!-- filter chips -->
+    <div style="display:flex; gap:10px; overflow-x:auto; padding:6px 2px 14px; margin-bottom:8px; justify-content:flex-start;">
+      <sc-for list="{{ chips }}" as="c" hint-placeholder-count="8">
+        <button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button>
+      </sc-for>
+    </div>
+
+    <!-- categories -->
+    <sc-for list="{{ shownCats }}" as="cat" hint-placeholder-count="3">
+      <div style="margin-top:30px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+          <i class="{{ cat.icon }}" style="color:#f0913c; font-size:22px;"></i>
+          <span style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; letter-spacing:.08em; text-transform:uppercase; color:#e8ddcc;">{{ cat.name }}</span>
+          <span style="flex:1; height:1px; background:linear-gradient(90deg,rgba(255,122,26,.4),rgba(255,255,255,.04));"></span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:16px;">
+          <sc-for list="{{ cat.items }}" as="it" hint-placeholder-count="4">
+            <div style="position:relative; background:linear-gradient(165deg,#272019,#1f1a14); border-radius:16px; overflow:hidden; box-shadow:0 0 0 1px rgba(255,255,255,.05) inset; display:flex; flex-direction:column;">
+              <div style="position:relative; height:120px; background:repeating-linear-gradient(135deg,#2f261c,#2f261c 11px,#2a2219 11px,#2a2219 22px); display:flex; align-items:center; justify-content:center;">
+                <div style="position:absolute; inset:0; background:radial-gradient(80% 90% at 50% 130%, rgba(255,90,8,.28), transparent 60%);"></div>
+                <i class="{{ it.icon }}" style="color:rgba(255,138,51,.85); font-size:46px; position:relative;"></i>
+                {{ it.badgeEl }}
+              </div>
+              <div style="padding:13px 14px 15px; display:flex; flex-direction:column; gap:4px; flex:1;">
+                <div style="font-weight:600; font-size:15px; line-height:1.25; color:{{ it.nameColor }};">{{ it.name }}</div>
+                <div style="flex:1;"></div>
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:8px;">
+                  <span style="font-family:'Barlow Condensed','Barlow',sans-serif; font-weight:700; font-size:21px; color:{{ it.priceColor }};">{{ it.price }}</span>
+                  {{ it.ctaEl }}
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </section>
+
+  <!-- ================= DELIVERY ================= -->
+  <section style="max-width:1180px; margin:48px auto 0; padding:0 20px;">
+    <div style="position:relative; overflow:hidden; border-radius:22px; background:linear-gradient(150deg,#281a10,#221b15 60%,#191510); box-shadow:0 0 0 1px rgba(255,122,26,.18) inset;">
+      <div style="position:absolute; right:-4%; top:-30%; width:42%; height:120%; background:radial-gradient(closest-side, rgba(255,90,8,.3), transparent 70%);"></div>
+      <div style="position:relative; padding:40px 32px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:26px; align-items:center;">
+        <div style="grid-column:1/-1; max-width:520px;">
+          <h2 style="font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(26px,4vw,40px); text-transform:uppercase; letter-spacing:.02em; color:#f2e8d8; margin:0;">Доставка и оплата</h2>
+          <p style="font-size:16px; color:#bdb19d; margin:12px 0 0;">Привезём горячим по всему Грозному. Закажите по телефону или напишите в WhatsApp.</p>
+        </div>
+        <sc-for list="{{ delivery }}" as="d" hint-placeholder-count="4">
+          <div style="display:flex; align-items:flex-start; gap:13px;">
+            <span style="flex:0 0 auto; width:44px; height:44px; border-radius:12px; background:rgba(255,122,26,.12); box-shadow:0 0 0 1px rgba(255,122,26,.28) inset; display:flex; align-items:center; justify-content:center;"><i class="{{ d.icon }}" style="color:#f0913c; font-size:22px;"></i></span>
+            <div><div style="font-weight:700; font-size:15.5px; color:#ebe1d0;">{{ d.title }}</div><div style="font-size:13.5px; color:#a89c88; margin-top:3px; line-height:1.4;">{{ d.text }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACTS / FOOTER ================= -->
+  <footer id="contacts" style="max-width:1180px; margin:54px auto 0; padding:0 20px 56px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px; padding-top:34px; border-top:1px solid rgba(255,255,255,.07);">
+      <div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="width:50px; height:50px; border-radius:14px; overflow:hidden; box-shadow:0 0 0 1.5px rgba(255,122,26,.5);"><img src="assets/big-burger-logo.jpg" alt="Big Burger" style="width:100%;height:100%;object-fit:cover;"></span>
+          <span style="font-family:'Oswald',sans-serif; font-weight:700; font-size:24px; letter-spacing:.04em; text-transform:uppercase;">Big Burger</span>
+        </div>
+        <p style="font-size:14px; color:#a89c88; line-height:1.55; margin:16px 0 0; max-width:300px;">Бургеры · шаурма · суши · мангал · пицца. Накормим вкусно и быстро.</p>
+      </div>
+      <div>
+        <div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:.18em; text-transform:uppercase; color:#f0913c; margin-bottom:14px;">Контакты</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; align-items:center; gap:11px;"><i class="ph-fill ph-map-pin" style="color:#f0913c; font-size:19px;"></i><span style="font-size:15px; color:#dcd2c0;">г. Грозный, ул. Вахи Алиева, 60</span></div>
+          <a href="https://wa.me/79388976161" target="_blank" style="display:flex; align-items:center; gap:11px;"><i class="ph-fill ph-whatsapp-logo" style="color:#2db35f; font-size:19px;"></i><span style="font-size:15px; color:#dcd2c0;">+7 938 897-61-61 · заказы</span></a>
+          <a href="https://wa.me/79659664499" target="_blank" style="display:flex; align-items:center; gap:11px;"><i class="ph-fill ph-whatsapp-logo" style="color:#2db35f; font-size:19px;"></i><span style="font-size:15px; color:#dcd2c0;">+7 965 966-44-99 · Мовсар, владелец</span></a>
+          <div style="display:flex; align-items:center; gap:11px;"><i class="ph-fill ph-clock" style="color:#f0913c; font-size:19px;"></i><span style="font-size:15px; color:#dcd2c0;">Ежедневно 10:00–23:55</span></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:14px; letter-spacing:.18em; text-transform:uppercase; color:#f0913c; margin-bottom:14px;">Заказать сейчас</div>
+        <a href="https://wa.me/79388976161" target="_blank" style="display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:13px; background:linear-gradient(180deg,#33b466,#299150); box-shadow:0 12px 28px -10px rgba(43,208,106,.6); font-weight:700; font-size:15.5px; color:#06140b;"><i class="ph-fill ph-whatsapp-logo" style="font-size:19px;"></i> Написать в WhatsApp</a>
+        <div style="font-size:13px; color:#857a68; margin-top:16px; line-height:1.5;">Оплата: наличные · перевод по QR<br>Бесплатная доставка от 1000 ₽ до 10 км</div>
+      </div>
+    </div>
+    <div style="margin-top:34px; padding-top:18px; border-top:1px solid rgba(255,255,255,.05); display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; font-size:12.5px; color:#6b6052;">
+      <span>© 2026 Big Burger · Грозный</span>
+      <span>Накормим вкусно и быстро 🔥</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:2400}}">
+class Component extends DCLogic {
+  state = {
+    active: "Все",
+    timer: "--:--:--",
+    genBusy: false,
+    genGoal: null,
+    aiOffers: [
+      { title: "«Сытная пятница»", mechanic: "При заказе от 1500 ₽ дарим Колу 2 л", why: "Поднимает средний чек в самый ходовой день" },
+      { title: "«Тайный соус»", mechanic: "Промокод SOUS: фирменный соус бесплатно к каждому бургеру", why: "Даёт повод заказать именно у вас" },
+      { title: "«Ночная цена»", mechanic: "С 22:00 до 23:55 минус 20% на все бургеры", why: "Загружает кухню перед закрытием" },
+    ],
+  };
+
+  componentDidMount() {
+    this._tick = () => {
+      const now = new Date();
+      const end = new Date(now); end.setHours(23, 55, 0, 0);
+      if (end <= now) end.setDate(end.getDate() + 1);
+      const d = Math.max(0, end - now);
+      const p = (n) => String(n).padStart(2, "0");
+      this.setState({ timer: p(Math.floor(d / 3.6e6)) + ":" + p(Math.floor((d % 3.6e6) / 6e4)) + ":" + p(Math.floor((d % 6e4) / 1e3)) });
+    };
+    this._tick();
+    this._iv = setInterval(this._tick, 1000);
+  }
+  componentWillUnmount() { clearInterval(this._iv); }
+
+  async genOffers(goal) {
+    if (this.state.genBusy) return;
+    this.setState({ genBusy: true, genGoal: goal });
+    try {
+      const prompt = 'Ты маркетолог доставки еды "Big Burger" в Грозном (бургеры, шаурма, суши, мангал, пицца; средний чек 600-900 рублей; бесплатная доставка от 1000 рублей; работают каждый день до 23:55). Придумай 3 короткие цепляющие промо-акции под цель: "' + goal + '". Пиши живым человеческим языком, без длинных тире. Верни строго JSON-массив из 3 объектов с полями: title (короткое название в кавычках-ёлочках), mechanic (механика одним предложением), why (чем выгодно владельцу, кратко). Только JSON, без пояснений.';
+      const raw = await window.claude.complete(prompt);
+      let txt = String(raw).trim();
+      const a = txt.indexOf("["), b = txt.lastIndexOf("]");
+      if (a !== -1 && b !== -1) txt = txt.slice(a, b + 1);
+      const arr = JSON.parse(txt);
+      if (Array.isArray(arr) && arr.length) {
+        this.setState({ aiOffers: arr.slice(0, 3).map(o => ({ title: o.title || "", mechanic: o.mechanic || "", why: o.why || "" })) });
+      }
+    } catch (e) {
+      /* оставляем текущие акции */
+    } finally {
+      this.setState({ genBusy: false });
+    }
+  }
+
+  data() {
+    const mk = (name, price, ok) => ({ name, price, ok });
+    return [
+      { name: "Бургеры", icon: "ph-fill ph-hamburger", itemIcon: "ph-fill ph-hamburger", items: [
+        mk("БигБургер с говядиной", "370 ₽", true),
+        mk("БигБургер с курицей", "370 ₽", true),
+        mk("Бургер в кляре большой", "350 ₽", true),
+        mk("Бургер в кляре маленький", "290 ₽", false),
+        mk("Деревенский большой", "200 ₽", true),
+      ]},
+      { name: "Шаурма · Гиро", icon: "ph-fill ph-wrap", itemIcon: "ph-fill ph-wrap", items: [
+        mk("Шаурма большая", "250 ₽", true),
+        mk("Гиро в контейнере", "420 ₽", true),
+        mk("Гиро в лепёшке", "250 ₽", true),
+        mk("Кинкер", "260 ₽", true),
+      ]},
+      { name: "Мангал", icon: "ph-fill ph-flame", itemIcon: "ph-fill ph-flame", items: [
+        mk("Куры на углях", "850 ₽", true),
+        mk("Люля кебаб", "400 ₽", true),
+        mk("Горячий шик", "400 ₽", true),
+        mk("Чесночный соус", "50 ₽", true),
+      ]},
+      { name: "Пицца", icon: "ph-fill ph-pizza", itemIcon: "ph-fill ph-pizza", items: [
+        mk("Пицца ассорти средняя", "450 ₽", true),
+        mk("Пицца сырная средняя", "450 ₽", true),
+        mk("Пицца пепперони большая", "550 ₽", true),
+        mk("Пицца четыре сезона", "450 ₽", true),
+        mk("Пицца с черемшой средняя", "650 ₽", true),
+      ]},
+      { name: "Суши · Роллы", icon: "ph-fill ph-fish", itemIcon: "ph-fill ph-fish", items: [
+        mk("Филадельфия микс", "500 ₽", true),
+        mk("Американа с лососем", "400 ₽", true),
+        mk("Рол Канада", "450 ₽", true),
+        mk("Калифорния с лососем", "400 ₽", false),
+      ]},
+      { name: "Снэки", icon: "ph-fill ph-basket", itemIcon: "ph-fill ph-basket", items: [
+        mk("Наггетсы 9 шт", "300 ₽", true),
+        mk("Картофель фри", "170 ₽", true),
+        mk("Крылышки острые 9 шт", "500 ₽", true),
+        mk("Стрипсы 8 шт", "410 ₽", false),
+        mk("Байтсы 12 шт", "170 ₽", true),
+      ]},
+      { name: "Выпечка", icon: "ph-fill ph-cookie", itemIcon: "ph-fill ph-cookie", items: [
+        mk("Пирожки с картошкой", "60 ₽", true),
+        mk("Пирожки с мясом", "80 ₽", true),
+        mk("Венские вафли с шоколадом", "320 ₽", true),
+        mk("Манты 8 шт", "300 ₽", true),
+      ]},
+      { name: "Салаты", icon: "ph-fill ph-leaf", itemIcon: "ph-fill ph-leaf", items: [
+        mk("Салат Цезарь", "300 ₽", true),
+        mk("Салат свежий", "250 ₽", true),
+      ]},
+      { name: "Напитки", icon: "ph-fill ph-cup", itemIcon: "ph-fill ph-cup", items: [
+        mk("Кола баночная", "90 ₽", true),
+        mk("Пепси / Кола 2 л", "200 ₽", true),
+        mk("Адреналин маленький", "130 ₽", true),
+        mk("Липтон зелёный 1 л", "150 ₽", true),
+      ]},
+    ];
+  }
+
+  badge(ok) {
+    return React.createElement("span", { style: {
+      position: "absolute", top: "10px", right: "10px",
+      display: "inline-flex", alignItems: "center", gap: "5px",
+      padding: "4px 9px", borderRadius: "999px",
+      background: ok ? "rgba(43,208,106,.16)" : "rgba(120,120,128,.2)",
+      boxShadow: ok ? "0 0 0 1px rgba(43,208,106,.4) inset" : "0 0 0 1px rgba(160,160,170,.25) inset",
+      fontFamily: "'Barlow',sans-serif", fontWeight: 600, fontSize: "11px",
+      color: ok ? "#a3ddba" : "#b6b6bc"
+    }}, ok ? "В наличии" : "Нет");
+  }
+
+  cta(ok) {
+    if (!ok) return React.createElement("span", { style: {
+      fontFamily: "'Barlow',sans-serif", fontWeight: 600, fontSize: "12.5px", color: "#7a7060"
+    }}, "нет");
+    return React.createElement("a", {
+      href: "https://wa.me/79388976161", target: "_blank",
+      style: {
+        display: "inline-flex", alignItems: "center", justifyContent: "center",
+        width: "36px", height: "36px", borderRadius: "11px",
+        background: "linear-gradient(180deg,#f0913c,#e76a14)",
+        boxShadow: "0 8px 18px -8px rgba(255,90,8,.7)", color: "#1a0d04",
+        textDecoration: "none", fontSize: "18px", lineHeight: 0
+      }
+    }, React.createElement("i", { className: "ph-bold ph-plus" }));
+  }
+
+  renderVals() {
+    const cats = this.data();
+    const active = this.state.active;
+    const allNames = ["Все", ...cats.map(c => c.name)];
+
+    const chips = allNames.map(name => {
+      const on = name === active;
+      return {
+        label: name,
+        style: [
+          "flex:0 0 auto", "cursor:pointer", "white-space:nowrap",
+          "padding:10px 18px", "border-radius:999px", "border:none",
+          "font-family:'Barlow',sans-serif", "font-weight:600", "font-size:14px",
+          "letter-spacing:.02em",
+          on ? "background:linear-gradient(180deg,#f0913c,#e76a14)" : "background:rgba(255,255,255,.05)",
+          on ? "color:#1a0d04" : "color:#cabda8",
+          on ? "box-shadow:0 8px 20px -8px rgba(255,90,8,.6)" : "box-shadow:0 0 0 1px rgba(255,255,255,.1) inset"
+        ].join(";"),
+        onClick: () => this.setState({ active: name })
+      };
+    });
+
+    const shown = (active === "Все" ? cats : cats.filter(c => c.name === active)).map(c => ({
+      name: c.name, icon: c.icon,
+      items: c.items.map(it => ({
+        name: it.name, price: it.price, icon: c.itemIcon,
+        nameColor: it.ok ? "#ebe1d0" : "#8d8270",
+        priceColor: it.ok ? "#f0bb8b" : "#74747a",
+        badgeEl: this.badge(it.ok),
+        ctaEl: this.cta(it.ok)
+      }))
+    }));
+
+    const features = [
+      { icon: "ph-fill ph-moped", title: "Бесплатная доставка", text: "От 1000 ₽ по Грозному, в радиусе до 10 км." },
+      { icon: "ph-fill ph-timer", title: "Быстро и горячо", text: "Готовим и привозим, пока еда ещё с пылу с жару." },
+      { icon: "ph-fill ph-list-plus", title: "Большой выбор", text: "Бургеры, шаурма, суши, мангал, пицца и снэки." },
+      { icon: "ph-fill ph-clock", title: "Работаем до ночи", text: "Каждый день с 10:00 до 23:55 без выходных." },
+    ];
+
+    const delivery = [
+      { icon: "ph-fill ph-moped", title: "Бесплатно от 1000 ₽", text: "Доставка по Грозному до 10 км." },
+      { icon: "ph-fill ph-wallet", title: "Наличные или QR", text: "Оплата при получении или переводом по QR." },
+      { icon: "ph-fill ph-clock", title: "с 10:00 до 23:55", text: "Принимаем заказы ежедневно." },
+      { icon: "ph-fill ph-whatsapp-logo", title: "Заказ в WhatsApp", text: "Пишите нам: +7 938 897-61-61" },
+    ];
+
+    const comboItems = [
+      "2× БигБургер с говядиной",
+      "2× Картофель фри",
+      "2× Кола 0,5 л",
+    ];
+
+    const promos = [
+      { icon: "ph-fill ph-ticket", tag: "Промокод BIG15", title: "Минус 15% на первый заказ", text: "Назовите BIG15 в WhatsApp и получите скидку на первый заказ от 700 ₽." },
+      { icon: "ph-fill ph-gift", tag: "3 = 2", title: "Третий ролл в подарок", text: "Закажите три ролла, а заплатите за два. Действует каждый день." },
+      { icon: "ph-fill ph-timer", tag: "Сытные часы", title: "Фри к бургеру даром", text: "С 15:00 до 17:00 картофель фри в подарок к любому бургеру." },
+    ];
+
+    const goalNames = ["Поднять средний чек", "Загрузить будни днём", "Вернуть клиентов"];
+    const goals = goalNames.map(g => {
+      const on = this.state.genGoal === g;
+      return {
+        label: g,
+        onClick: () => this.genOffers(g),
+        style: [
+          "flex:0 0 auto", "cursor:pointer", "white-space:nowrap", "border:none",
+          "padding:11px 18px", "border-radius:999px",
+          "font-family:'Barlow',sans-serif", "font-weight:600", "font-size:14px",
+          on ? "background:linear-gradient(180deg,#f0913c,#e76a14)" : "background:rgba(255,255,255,.05)",
+          on ? "color:#1a0d04" : "color:#e8ddcc",
+          on ? "box-shadow:0 8px 20px -8px rgba(255,90,8,.55)" : "box-shadow:0 0 0 1px rgba(255,255,255,.12) inset",
+          this.state.genBusy ? "opacity:.7" : "opacity:1"
+        ].join(";")
+      };
+    });
+
+    return { chips, shownCats: shown, features, delivery, timer: this.state.timer, comboItems, promos, goals, aiOffers: this.state.aiOffers, genBusy: this.state.genBusy };
+  }
+}
+</script>
+</body>
+</html>
